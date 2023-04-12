@@ -37,22 +37,22 @@
                     //if email is not present in databse it will send verification to mailaddress
                     try {
                         //Server settings
-                        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
                         $mail->isSMTP();  
-                        $mail->SMTPDebug = 2;                                          //Send using SMTP
-                        $mail->Host       = 'smtp..com';                     //Set the SMTP server to send through
-                        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                        $mail->Username   = 'gnaneshgupta31@gmail.com';                     //SMTP username
-                        $mail->Password   = 'tcyvftsavtomiteg';                               //SMTP password
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                        $mail->SMTPDebug = 2;                                         
+                        $mail->Host       = '';                     
+                        $mail->SMTPAuth   = true;                               
+                        $mail->Username   = '';                    
+                        $mail->Password   = '';                               
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+                        $mail->Port       = 465;                                    
 
                         //Recipients
-                        $mail->setFrom('gnaneshgupta31@gmail.com');
+                        $mail->setFrom('');
                         $mail->addAddress($email);
 
                         //Content
-                        $mail->isHTML(true);                             //Set email format to HTML
+                        $mail->isHTML(true);                           
                         $mail->Subject = 'no reply';
                         $mail->Body    = 'Here is the verification link <b><a href="https://myfirstwebsite.tech/login/?verification='.$code.'">https://myfirstwebsite.tech/login/?verification='.$code.'</a></b>';
 
