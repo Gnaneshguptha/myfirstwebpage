@@ -33,21 +33,21 @@ if (isset($_POST['submit'])) {
 
             try {
                 //Server settings
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'gnaneshgupta31@gmail.com';                     //SMTP username
-                $mail->Password   = 'tcyvftsavtomiteg';                               //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
+                $mail->isSMTP();                                            
+                $mail->Host       = '';                    
+                $mail->SMTPAuth   = true;                                  
+                $mail->Username   = '';                    
+                $mail->Password   = '';                               
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+                $mail->Port       = 465;                                   
 
                 //Recipients
-                $mail->setFrom('gnaneshgupta31@gmail.com');
+                $mail->setFrom('');
                 $mail->addAddress($email);
 
                 //Content
-                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->isHTML(true);
                 $mail->Subject = 'no reply';
                 $mail->Body    = 'Here is the verification link <b><a href="https://636f-27-6-143-88.in.ngrok.io/login/change-password.php?reset='.$code.'">https://636f-27-6-143-88.in.ngrok.io/login/change-password.php?reset='.$code.'</a></b>';
 
